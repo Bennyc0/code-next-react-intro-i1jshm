@@ -15,10 +15,18 @@ export const Events = () => {
     setY(e.clientY - e.target.offsetTop);
   };
 
+  const onMouseDown = (e) => {
+    setIsMouseDown(true);
+  }
+
+  const onMouseUp= (e) => {
+    setIsMouseDown(false);
+  }
+
+  const
+
   // TODO: What do you think will happen if you change isMouseDown to true?
-  // After you observe what happens, change it back. Update the component
-  // so that isMouseDown is true when the mouse is down and false when the
-  // mouse is up.
+  // After you observe what happens, change it back. Update the component so that isMouseDown is true when the mouse is down and false when the mouse is up.
   useLineDrawnTo(canvas.current, x, y, isMouseDown);
 
   return (
@@ -28,7 +36,7 @@ export const Events = () => {
 
       <br />
 
-      <canvas ref={canvas} onMouseMove={onMouseMove} />
+      <canvas ref={canvas} onMouseMove={onMouseMove} onMouseDown={onMouseDown} onMouseUp={onMouseUp}/>
     </>
   );
 };
