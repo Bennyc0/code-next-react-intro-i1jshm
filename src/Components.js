@@ -4,7 +4,6 @@ export const Components = () => {
   return (
     <>
       <Components1 x={4} />
-      <Components1 />
 
       <br />
 
@@ -48,5 +47,15 @@ const WelcomeSoftly = (props) => {
 
 // TODO: Make some more basic components, and render them after "Components3".
 const Components3 = () => {
-  return <div>Components3:</div>;
+  return (
+    <div>
+      Components3: <DivideNumber num={7} />
+    </div>
+  );
+};
+
+// Note: "DivideNumber" is the child of "Components3"
+const DivideNumber = (props) => {
+  const num = props.num;
+  return <span>{num / 2}</span>;
 };
